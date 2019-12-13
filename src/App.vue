@@ -18,6 +18,9 @@ export default {
 
   },
   created () {
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+      window.location.replace('http://csh5.thelatest.cn/')
+    }
   },
   mounted () {
 
