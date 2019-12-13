@@ -1,0 +1,37 @@
+@import '../comm';
+
+.header {
+  width: 100%;
+  .topBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    img {
+      display: block;
+      height: 55px;
+      margin-left: 20px;
+    }
+    .nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .nav-item {
+        line-height: 90px;
+        font-size: 16px;
+        color: #666;
+        padding: 0 20px;
+        cursor: pointer;
+        &:hover {
+          color: #0e5090;
+        }
+      }
+      .active {
+        background-image: url("~@/assets/icon/arrow.png");
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        color: #0e1730!important;
+      }
+    }
+  }
+}
