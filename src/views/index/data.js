@@ -1,7 +1,7 @@
 export default () => {
   return {
     list: [],
-    count: 200,
+    count: 0,
     page: 1,
     list_rows: 15
   }

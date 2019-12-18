@@ -36,6 +36,7 @@
         <el-pagination
           background
           layout="prev, pager, next"
+          :page-size="list_rows"
           @current-change="handlePageChange"
           :total="count">
         </el-pagination>
