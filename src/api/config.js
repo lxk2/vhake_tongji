@@ -1,6 +1,6 @@
-const DOMAIN = ''
+const DOMAIN = 'http://api.w50f.cn'
 
-const BASE_URL = DOMAIN + '/api/v1.'
+const BASE_URL = DOMAIN + '/api'
 
 const SUCCESS_CODE = 1
 

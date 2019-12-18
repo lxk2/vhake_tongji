@@ -15,19 +15,21 @@
       >
       </el-table-column>
       <el-table-column
-        prop="create_time"
+        prop="opentime"
         label="统计时间"
         width="161"
       >
       </el-table-column>
       <el-table-column
-        prop="online_users"
         label="在线人数"
         width="111"
       >
+        <template slot-scope="scope">
+          {{ scope.row.resultnum | toThousandFilter }}
+        </template>
       </el-table-column>
       <el-table-column
-        prop="hash_algorithm"
+        prop="algorithm"
         label="哈希算法"
         width="81"
         >
@@ -45,7 +47,7 @@
         label="操作"
         width="80">
         <template slot-scope="scope">
-          <el-button @click="handleClick(scope.row)" type="text" size="small" class="x-btn">验证</el-button>
+          <el-button @click="handleClick(scope.row, scope.$index)" type="text" size="small" class="x-btn">验证</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -53,7 +55,8 @@
       <el-pagination
         background
         layout="prev, pager, next"
-        :total="total">
+        @current-change="handlePageChange"
+        :total="count">
       </el-pagination>
     </div>
   </div>
@@ -67,6 +70,7 @@ export default {
   data,
   methods,
   created () {
+    this.getList()
   },
   mounted () {
   }

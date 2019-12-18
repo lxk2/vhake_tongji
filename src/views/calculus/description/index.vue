@@ -1,7 +1,7 @@
 <template>
     <div>
-      <div class="content-x">
-        这里是富文本
+      <div class="content-x" v-html="content">
+
       </div>
     </div>
 </template>
@@ -14,6 +14,7 @@ export default {
   data,
   methods,
   created () {
+    this.getData()
   },
   mounted () {
   }

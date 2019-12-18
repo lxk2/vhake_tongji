@@ -8,12 +8,12 @@
           <div class="main">
             <p>
                 <img src="@/assets/icon/time.png" alt="">
-                <span>2019-11-25 09:09:00</span>
+                <span>{{ netData.new.opentime }}</span>
                 <span class="last">百度点击量</span>
             </p>
             <p>
-              <strong>303,071,376</strong>
-              <span>历史最高：332,164,438</span>
+              <strong>{{ netData.new.resultnum | toThousandFilter }}</strong>
+              <span>历史最高：{{ netData.top.resultnum | toThousandFilter }}</span>
             </p>
             <p>
               <span>所有数据均来自百度统计</span>
@@ -30,13 +30,34 @@ export default {
   name: 'banner',
   data () {
     return {
-
+      netData: {
+        new: {},
+        top: {}
+      },
+      timer: null
     }
   },
   methods: {
-
+    loop () {
+      let that = this
+      that.$http.post('v1.home/loopNewResult')
+        .then(res => {
+          if (res.code === that.$config.SUCCESS_CODE) {
+            that.netData = res.data
+          } else {
+            that.netData = {
+              new: {},
+              top: {}
+            }
+          }
+        })
+    }
   },
   created () {
+    this.loop()
+    this.timer = setInterval(() => {
+      this.loop()
+    }, 10000)
   },
   props: {
 

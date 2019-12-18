@@ -14,25 +14,30 @@
           >
         </el-table-column>
         <el-table-column
-          prop="create_time"
+          prop="opentime"
           label="统计时间"
           >
         </el-table-column>
         <el-table-column
-          prop="online_users"
           label="在线人数"
           >
+          <template slot-scope="scope">
+            {{ scope.row.resultnum | toThousandFilter }}
+          </template>
         </el-table-column>
         <el-table-column
-          prop="volatility"
           label="波动值">
+          <template slot-scope="scope">
+            {{ scope.row.f_value | toThousandFilter }}
+          </template>
         </el-table-column>
       </el-table>
       <div class="x-pagination">
         <el-pagination
           background
           layout="prev, pager, next"
-          :total="total">
+          @current-change="handlePageChange"
+          :total="count">
         </el-pagination>
       </div>
     </div>
@@ -46,6 +51,7 @@ export default {
   data,
   methods,
   created () {
+    this.getList()
   },
   mounted () {
   }
