@@ -18,6 +18,16 @@ NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
 // 导航守卫
 router.beforeEach((to, from, next) => {
   NProgress.start() // 进度条开始
+  if (to.path === '/') {
+    next({
+      path: '/baidu'
+    })
+  }
+  if (to.path.indexOf('/baidu') === -1) {
+    next({
+      path: '/baidu' + to.path
+    })
+  }
   next()
 })
 router.afterEach(() => {

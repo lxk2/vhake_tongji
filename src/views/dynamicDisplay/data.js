@@ -1,5 +1,6 @@
 export default () => {
   return {
-    chart: null
+    chart: null,
+    temp: [0, 0, 0]
   }
 }

@@ -4,14 +4,16 @@ import Home from '../views/index'
 
 Vue.use(VueRouter)
 
+let BasePath = '/baidu'
+
 const routes = [
   {
-    path: '/',
+    path: BasePath,
     name: 'home',
     component: Home
   },
   {
-    path: '/interface',
+    path: `${BasePath}/interface`,
     name: 'interface',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -19,32 +21,32 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/interface')
   },
   {
-    path: '/description',
+    path: `${BasePath}/description`,
     name: 'description',
     component: () => import('../views/description')
   },
   {
-    path: '/dynamicDisplay',
+    path: `${BasePath}/dynamicDisplay`,
     name: 'dynamicDisplay',
     component: () => import('../views/dynamicDisplay')
   },
   {
-    path: '/calculus/index',
+    path: `${BasePath}/calculus/index`,
     name: 'calculus/index',
     component: () => import('../views/calculus/index')
   },
   {
-    path: '/calculus/verification',
+    path: `${BasePath}/calculus/verification`,
     name: 'calculus/verification',
     component: () => import('../views/calculus/verification')
   },
   {
-    path: '/calculus/description',
+    path: `${BasePath}/calculus/description`,
     name: 'calculus/description',
     component: () => import('../views/calculus/description')
   },
   {
-    path: '/calculus/interface',
+    path: `${BasePath}/calculus/interface`,
     name: 'calculus/interface',
     component: () => import('../views/calculus/interface')
   }

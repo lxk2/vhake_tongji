@@ -1,8 +1,8 @@
 <template>
     <div>
       <footer class="footer">
-        <p>Copyright © 1998- 2016 HuaQi. All Rights Reserved.</p>
-        <p>某某公司 版权所有</p>
+        <p>Copyright © 1998- 2019 RuYi. All Rights Reserved.</p>
+        <p>如意统计 版权所有</p>
       </footer>
     </div>
 </template>

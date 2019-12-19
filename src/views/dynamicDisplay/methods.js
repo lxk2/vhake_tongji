@@ -10,6 +10,7 @@ export default {
       .then(res => {
         if (res.code === that.$config.SUCCESS_CODE) {
           let data = res.data
+          this.temp = data.temp
           let options = {
             title: {
               text: ''

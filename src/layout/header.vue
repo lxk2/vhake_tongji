@@ -2,7 +2,7 @@
     <div>
       <header class="header">
         <div class="box topBox">
-          <img src="http://www.77tj.org/assets/images/logo.png" alt="">
+          <img src="@/assets/logo1.png" alt="">
           <div class="nav">
             <div class="nav-item" v-for="(item, key) in list" :key="key" :class="{
               active: currentTabIndex === key
