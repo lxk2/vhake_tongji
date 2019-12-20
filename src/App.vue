@@ -18,8 +18,9 @@ export default {
 
   },
   created () {
+    let mobildDomain = 'http://m.w50f.cn/'
     if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-      window.location.replace('http://csh5.thelatest.cn/')
+      window.location.replace(mobildDomain)
     }
   },
   mounted () {
@@ -100,4 +101,10 @@ export default {
   .el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li:hover {
     color: #0e1730!important;
   }
+
+  /*.content-x {*/
+  /*  img {*/
+  /*    width: 100%;*/
+  /*  }*/
+  /*}*/
 </style>
