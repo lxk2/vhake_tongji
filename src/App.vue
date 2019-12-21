@@ -18,8 +18,8 @@ export default {
 
   },
   created () {
-    // let mobildDomain = 'http://m.w50f.cn/'
-    let mobildDomain = 'http://cs.thelatest.cn/'
+    let mobildDomain = 'http://m.w50f.cn/'
+    // let mobildDomain = 'http://cs.thelatest.cn/'
     if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
       window.location.replace(mobildDomain)
     }
