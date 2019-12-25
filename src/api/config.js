@@ -1,4 +1,4 @@
-const DOMAIN = 'http://api.w50f.cn'
+const DOMAIN = 'http://api.w50f.cn:88'
 
 const BASE_URL = DOMAIN + '/api'
 
